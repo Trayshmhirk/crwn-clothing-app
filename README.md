@@ -3,7 +3,6 @@
 An e-commerce web application built with React, Firebase, Redux Toolkit, Stripe, and other technologies.
 
 ![Crown Clothing App Screenshot](./src/assets/screencapture-localhost-3000-2023-10-11-16_47_54.png)
-![Crown Clothing App Screenshot](./src/assets/screencapture-localhost-3000-shop-2023-10-11-16_49_04.png)
 
 ## Table of Contents
 

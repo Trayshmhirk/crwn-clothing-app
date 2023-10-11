@@ -27,7 +27,7 @@ const PayWithStripePage = () => {
 
    useEffect(() => {
       // create paymentIntent as soon as page loads
-      fetch(`http://localhost:3001/create-payment-intent?payment_intent_client_secret=${clientSecret}`, {
+      fetch(`https://stripe-server-crwn-clothing.onrender.com/create-payment-intent?payment_intent_client_secret=${clientSecret}`, {
          method: 'POST',
          headers: {'Content-Type': 'application/json'},
          body: JSON.stringify({cartTotal: cartTotal})
