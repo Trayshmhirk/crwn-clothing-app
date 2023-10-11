@@ -1,0 +1,32 @@
+.sign-in {
+   max-width: 380px;
+   display: flex;
+   flex-direction: column;
+
+   .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   @media screen and (max-width: 468px) {
+      .buttons {
+         flex-direction: column;
+      }
+   }
+
+   span {
+      margin: 10px 0;
+   }
+
+   .signup-link {
+      color: rgb(0, 0, 230);
+      text-decoration: underline;
+      margin-left: 5px;
+
+      &:hover {
+         text-decoration: none;
+         color: black;
+      }
+   }
+}

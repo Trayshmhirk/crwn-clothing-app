@@ -1,0 +1,21 @@
+.sign-up {
+   display: flex;
+   flex-direction: column;
+   max-width: 380px;
+   height: fit-content;
+
+   span {
+      margin: 10px 0;
+   }
+
+   .signin-link {
+      color: rgb(0, 0, 230);
+      text-decoration: underline;
+      margin-left: 5px;
+
+      &:hover {
+         text-decoration: none;
+         color: black;
+      }
+   }
+}
