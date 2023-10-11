@@ -43,6 +43,11 @@ app.post('/create-payment-intent', async (req, res) => {
    }
 })
 
+app.get('/payment-success', (req, res) => {
+   // Redirect to the payment success page
+   res.redirect('https://crwn-clothng-app.netlify.app/payment-success');
+});
+
 app.listen(3001, () => {
    console.log('Server is running on port 3001');
 });

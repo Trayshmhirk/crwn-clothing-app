@@ -41,26 +41,23 @@ export default function CheckoutForm() {
          return;
       }
    
-      stripe.retrievePaymentIntent(clientSecret).then(({paymentIntent}) => {
-         switch (paymentIntent.status) {
-            case 'succeeded':
-               setMessage('Payment Succeeded!');
-               break;
-            case 'processing':
-               setMessage('Your payment is processing.')
-               break;
-            case 'requires_payment_method':
-               setMessage('Your payment was not successful, please try again.');
-               break;         
-            default:
-               setMessage('Something went wrong.')
-               break;
-         }
-      })
+      stripe.retrievePaymentIntent(clientSecret).then(handlePaymentIntent);
 
    }, [stripe])
 
-   // 
+   //
+   const handlePaymentIntent = ({paymentIntent}) => {
+      if (paymentIntent.status === 'succeeded') {
+         redirectToPaymentSuccessPage();
+      }
+   }
+
+   const redirectToPaymentSuccessPage = () => {
+      // Redirect to the payment success page
+      window.location.href = 'https://crwn-clothng-app.netlify.app/payment-success';
+   }
+
+   //
    const handleSubmit = async (e) => {
       e.preventDefault();
 
@@ -73,22 +70,30 @@ export default function CheckoutForm() {
       setIsLoading(true);
 
       //
-      const {error} = await stripe.confirmPayment({
+      const {error, paymentIntent} = await stripe.confirmPayment({
          elements,
          confirmParams: {
             return_url: `${window.location.origin}/payment-success`
          }
       })
 
+      if (error) {
+         handlePaymentError(error);
+      } else if (paymentIntent.status === 'succeeded') {
+         redirectToPaymentSuccessPage()
+      }
+
+      setIsLoading(false);
+   };
+
+   const handlePaymentError = (error) => {
       // manage errors
       if (error.type === 'card_error' || error.type === 'validation_error') {
          setMessage(error.message)
       } else {
          setMessage('An unexpected error occurred')
       }
-
-      setIsLoading(false);
-   };
+   }
 
    const PaymentElementOptions = {
       layout: 'tabs',
