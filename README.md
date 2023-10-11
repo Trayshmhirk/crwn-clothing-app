@@ -14,7 +14,6 @@ An e-commerce web application built with React, Firebase, Redux Toolkit, Stripe,
   - [Features](#features)
   - [Technologies](#technologies)
   - [Author](#author)
-  - [Installation](#installation)
 
 ## Demo
 
@@ -71,12 +70,3 @@ Key features include:
 
 - Frontend Mentor - [@Trayshmhirk](https://www.frontendmentor.io/profile/Trayshmhirk)
 - Twitter - [@TrayShmhirk01](https://www.twitter.com/TrayShmhirk01)
-
-## Installation
-
-Follow these steps to install and run the project locally:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
