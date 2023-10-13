@@ -78,7 +78,7 @@ const Header = () => {
 
                   {
                      mobileMenuOpen && (
-                        <MobileMenu toggleMobileMenu={handleMobileMenuOpen} />
+                        <MobileMenu />
                      )
                   }
 
