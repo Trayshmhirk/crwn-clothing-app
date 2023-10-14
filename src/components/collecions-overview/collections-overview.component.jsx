@@ -7,9 +7,7 @@ import { selectCollectionsForPreview } from '../../redux/shop/shop.selector';
 import CollectionPreview from '../collection-preview/collection-preview.component';
 
 
-
 const CollectionsOverview = () => {
-
    const structuredSelector = createStructuredSelector({
       collections: selectCollectionsForPreview
    })

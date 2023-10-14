@@ -45,7 +45,7 @@ export default function CheckoutForm() {
 
    }, [stripe])
 
-   //
+   // handle the payment intent and redirect to payment success page
    const handlePaymentIntent = ({paymentIntent}) => {
       if (paymentIntent.status === 'succeeded') {
          redirectToPaymentSuccessPage();
@@ -57,7 +57,6 @@ export default function CheckoutForm() {
       window.location.href = 'https://crwn-clothng-app.netlify.app/payment-success';
    }
 
-   //
    const handleSubmit = async (e) => {
       e.preventDefault();
 
@@ -69,7 +68,6 @@ export default function CheckoutForm() {
       // when stripe.js is loading, set isLoading to be true
       setIsLoading(true);
 
-      //
       const {error, paymentIntent} = await stripe.confirmPayment({
          elements,
          confirmParams: {

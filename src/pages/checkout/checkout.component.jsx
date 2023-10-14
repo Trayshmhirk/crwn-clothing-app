@@ -10,16 +10,15 @@ import { useSelector } from 'react-redux';
 import { selectCartTotal } from '../../redux/cart/cart.selector';
 
 
-
 const CheckoutPage = () => {
-   //
+   // selecting the cart functions to be used from selector where they have been initialized
    const structuredSelector = createStructuredSelector({
       cartItems: selectCartItems,
       cartTotal: selectCartTotal
    })
    const {cartItems, cartTotal} = useSelector(structuredSelector);
 
-   //
+   // navigate to the stripe payment form page
    const navigate = useNavigate();
    const handleCheckout = () => {
       navigate('/pay-with-stripe');

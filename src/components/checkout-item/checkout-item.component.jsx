@@ -5,9 +5,8 @@ import { addCartItem, removeCartItem } from '../../redux/cart/cartSlice';
 
 
 const CheckoutItem = ({cartItem}) => {
-   //
    const dispatch = useDispatch();
-   //
+   
    const clearCartItem = () => {
       dispatch(clearItemFromCart(cartItem))
    }

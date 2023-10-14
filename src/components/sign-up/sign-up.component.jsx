@@ -26,6 +26,7 @@ const SignUp = ({toggle}) => {
          return;
       }
 
+      // create the user profile to firebase using the input parameters from the form
       try {
          const {user} = await createUserWithEmailAndPassword(auth, email, password)
 

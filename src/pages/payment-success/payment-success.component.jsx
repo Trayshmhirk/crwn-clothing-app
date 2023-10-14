@@ -11,13 +11,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 const PaymentSuccessPage = () => {
-   //
    const structuredSelector = createStructuredSelector({
       cartTotal: selectCartTotal
    })
    const { cartTotal } = useSelector(structuredSelector);
 
-   // navigate
+   // navigate to home page and toggle the mobile menu to false
    const navigate = useNavigate();
    const dispatch = useDispatch();
    const handleSubmit = () => {

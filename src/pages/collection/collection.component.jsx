@@ -3,23 +3,23 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 
 import { useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { selectCollection } from '../../redux/shop/shop.selector';
 
 import { useParams } from 'react-router-dom';
 
-import { selectCollection } from '../../redux/shop/shop.selector';
 
 
 const CollectionPage = () => {
-
+   // getting the url parameter for the page to render the collections specific for the url parameter
    const {category} = useParams();
 
-   // 
    const structuredSelector = createStructuredSelector({
       collections: selectCollection(category)
    });
    const { collections } = useSelector(structuredSelector);
 
-   const { items, title } = collections
+   // deconstruct the props needed from the collections
+   const { items, title } = collections;
 
    return(
       <div className='collection-page'>

@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 export const userSlice = createSlice({
    name: 'userAuth',
    initialState: {
@@ -16,7 +15,6 @@ export const userSlice = createSlice({
       }
    },
 })
-
 
 export const {setUser, removeUser} = userSlice.actions;
 

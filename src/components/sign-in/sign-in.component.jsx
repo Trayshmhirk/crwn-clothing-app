@@ -1,10 +1,14 @@
 import './sign-in.style.scss'
-import { useState } from 'react'
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+
+import { useState } from 'react'
+
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+
 import { Link } from 'react-router-dom';
+
 
 const SignIn = ({toggle}) => {
    const [signInData, setSignInData] = useState({
@@ -12,6 +16,7 @@ const SignIn = ({toggle}) => {
       password: '',
    })
 
+   // handle the email and password, passing the input email and password to firebase
    const handleSubmit = async (e) => {
       e.preventDefault();
       const {email, password} = signInData;

@@ -14,24 +14,21 @@ import { useNavigate } from 'react-router-dom';
 
 
 const CartDropdown = () => {
-   //
    const structuredSelector = createStructuredSelector({
       cartItems: selectCartItems,
    })
    const {cartItems} = useSelector(structuredSelector);
 
-   //
    const navigate = useNavigate();
    const dispatch = useDispatch();
 
-   //
+   // navigate to checkout, toggle the cart and the mobile menu on checking out
    const handleCheckout = () => {
       dispatch(cartToggle());
       dispatch(menuToggle());
       navigate('checkout');
    }
 
-   // 
    const handleExitCart = () => {
       dispatch(cartToggle());
    }

@@ -9,10 +9,8 @@ import { createStructuredSelector } from 'reselect';
 import { useSelector } from 'react-redux';
 import { selectCartTotal } from '../../redux/cart/cart.selector';
 
-
-
+// initializing the publishable stripe api key
 const stripePromise = loadStripe(import.meta.env.VITE_PUBLISHABLE_STRIPE_API_KEY)
-
 
 
 const PayWithStripePage = () => {
@@ -47,7 +45,6 @@ const PayWithStripePage = () => {
       clientSecret,
       appearance,
    }
-
 
    return (
       <div className='payment-form'>

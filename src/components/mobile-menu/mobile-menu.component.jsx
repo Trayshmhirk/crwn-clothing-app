@@ -18,7 +18,6 @@ import { createStructuredSelector } from 'reselect';
 
 
 const MobileMenu = () => {
-   // 
    const structuredSelector = createStructuredSelector({
       hidden: selectHidden,
       currentUser: selectCurrentUser,
@@ -26,9 +25,8 @@ const MobileMenu = () => {
    })
    const {hidden, currentUser} = useSelector(structuredSelector);
 
-   //
    const dispatch = useDispatch();
-
+   // toggle the mobile menu
    const handleMobileMenuOpen = () => {
       dispatch(menuToggle());
    }

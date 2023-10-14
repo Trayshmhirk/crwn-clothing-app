@@ -4,7 +4,7 @@ import { addItemToCart, removeItemFromCart } from "./cart.utils";
 export const cartSlice = createSlice({
    name: 'shoppingCart',
    initialState: {
-      hidden: true,
+      hidden: false,
       cartItems: []
    },
    reducers: {

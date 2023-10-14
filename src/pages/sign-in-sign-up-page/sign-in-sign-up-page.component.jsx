@@ -4,9 +4,8 @@ import SignUp from '../../components/sign-up/sign-up.component'
 import { useState } from 'react';
 
 const SignInAndSignUpPage = () => {
-
+   // toggle between sign in and sign up form
    const [showSignUp, setShowSignUp] = useState(true);
-
    const toggleForm = () => {
       setShowSignUp(!showSignUp);
    }

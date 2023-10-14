@@ -21,6 +21,7 @@ export const totalQuantity = createSelector(
    (cartItems) => cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
 )
 
+// output selector to calculate the total price of all the products in the cart
 export const selectCartTotal = createSelector(
    [selectCartItems],
    (cartItems) => cartItems.reduce((total, cartItem) => 

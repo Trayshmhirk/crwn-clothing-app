@@ -23,7 +23,7 @@ import { createStructuredSelector } from 'reselect';
 
 
 const Header = () => {
-   // 
+   // enhancing the selection of states from the redux store
    const structuredSelector = createStructuredSelector({
       hidden: selectHidden,
       currentUser: selectCurrentUser,
@@ -31,18 +31,19 @@ const Header = () => {
    })
    const {hidden, currentUser, mobileMenuOpen} = useSelector(structuredSelector);
 
-   //
-   const dispatch = useDispatch();
 
+   const dispatch = useDispatch();
+   // toggle the mobile menu open or close
    const handleMobileMenuOpen = () => {
       dispatch(menuToggle());
    }
 
-   // 
+   // function to listen for a rezise on the width of the window, to set the windowWidth state as the window width chages in realtime
+   // this is to make sure the hamburger menu is rendered at a max-wdith screen of 600px
    const useWindowWidth = () => {
       const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-      //
+      // handles the realtime change in the screen width and sets the state to the width
       useEffect(() => {
          const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -104,7 +105,7 @@ const Header = () => {
                      <CartIcon/>
                   </div>
                   {
-                     hidden ? null : <CartDropdown />
+                     hidden && ( <CartDropdown />)
                   }
                </div>
             )
