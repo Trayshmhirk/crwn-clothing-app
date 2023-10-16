@@ -1,7 +1,6 @@
 import './App.css';
 import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 
-
 import HomePage  from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-sign-up-page/sign-in-sign-up-page.component';
@@ -28,7 +27,6 @@ function App() {
    const dispatch = useDispatch();
    const location = useLocation();
 
-   // 
    const structuredSelector = createStructuredSelector({
       currentUser: selectCurrentUser
    })
