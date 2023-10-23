@@ -9,7 +9,7 @@
    background-color: white;
    top: 90px;
    right: 40px;
-   z-index: 5;
+   z-index: 1;
  
    .cart-items {
       height: 240px;
@@ -29,7 +29,6 @@
 
 
    @media screen and (max-width: 600px) {
-      // position: unset;
       top: 0;
       bottom: 0;
       left: 0;

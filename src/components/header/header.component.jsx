@@ -105,7 +105,7 @@ const Header = () => {
                      <CartIcon/>
                   </div>
                   {
-                     hidden && ( <CartDropdown />)
+                     hidden ? null : ( <CartDropdown />)
                   }
                </div>
             )

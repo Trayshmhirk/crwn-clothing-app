@@ -16,7 +16,7 @@ An e-commerce web application built with React, Firebase, Redux Toolkit, Stripe,
 
 ## Demo
 
-You can experience the app live at [https://your-app-url.com](https://your-app-url.com).
+You can experience the app live at [https://crwn-clothng-app.netlify.app/](https://crwn-clothng-app.netlify.app/).
 
 ## Description
 
@@ -25,6 +25,7 @@ This is a small e-commerce app designed to showcase key features such as user au
 Key features include:
 
 - User authentication using Firebase (Google Sign-In and Email/Password)
+- Storing shop data on Firebase Cloud Firestore
 - Product catalog and shopping cart
 - Seamless and secure payment processing with Stripe API
 - User-friendly and responsive user interface
@@ -37,6 +38,8 @@ Key features include:
 ## Features
 
 - **User Authentication**: Users can create accounts, sign in with Google, or use email and password for authentication.
+
+- **Firebase cloud firestore**: Setting the shop data from the app to firestore, and retrieving the data into our app redux state.
 
 - **Product Listings**: Display a variety of products with images, and prices.
 
@@ -53,6 +56,8 @@ Key features include:
 - **Dynamic Routing**: Use React Router DOM for dynamic routing to different parts of the app.
 
 - **Styling**: Style app with SCSS for flexibility and maintainability.
+
+- **HOC**: Rendering a spinner div while data is being fetched from the Firebase Firestore 
 
 ## Technologies
 

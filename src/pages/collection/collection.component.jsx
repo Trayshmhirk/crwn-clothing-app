@@ -8,7 +8,6 @@ import { selectCollection } from '../../redux/shop/shop.selector';
 import { useParams } from 'react-router-dom';
 
 
-
 const CollectionPage = () => {
    // getting the url parameter for the page to render the collections specific for the url parameter
    const {category} = useParams();

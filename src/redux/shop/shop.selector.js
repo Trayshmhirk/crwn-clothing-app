@@ -12,11 +12,11 @@ export const selectShopItems = createSelector(
 // output the collections with the parameter of the url
 export const selectCollection = collectionUrlParam => createSelector(
    [selectShopItems],
-   collections => collections[collectionUrlParam]  
+   collections => collections ? collections[collectionUrlParam] : null
 )
    
 // output the collections to be rendered in the preview component
 export const selectCollectionsForPreview = createSelector(
    [selectShopItems],
-   collections => Object.keys(collections).map(key => collections[key])
+   collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 )
