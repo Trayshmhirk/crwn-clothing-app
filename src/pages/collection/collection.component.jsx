@@ -13,7 +13,8 @@ const CollectionPage = () => {
    const {category} = useParams();
 
    const structuredSelector = createStructuredSelector({
-      collections: selectCollection(category)
+      collections: selectCollection(category),
+      
    });
    const { collections } = useSelector(structuredSelector);
 
